@@ -1,0 +1,6 @@
+_assets/
+node_modules/
+sass/
+package.json
+package-lock.json
+gulpfile.js
