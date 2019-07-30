@@ -22,6 +22,11 @@
 
     <preference name="fullscreen" value="true" />
 
+    <preference name="SplashScreen" value="img/SplashScreen.png"/>
+    <preference name="SplashScreenDelay" value="2000"/>
+
     <access origin="*"></access>
+
+    <icon src="img/wot-icon.png" platform="android" width="180" height="180"/>
 
 </widget>

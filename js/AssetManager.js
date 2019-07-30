@@ -23,10 +23,10 @@
 	a.initialize = function () {
         this.Container_initialize();
         this.loadManifest = [
-			{id:"homeBg", src:this.assetsPath + "bg-1.png"},
-			{id:"lvl2Bg", src:this.assetsPath + "bg-2.png"},
-			{id:"lvl3Bg", src:this.assetsPath + "bg-3.png"},
-			{id:"lvl4Bg", src:this.assetsPath + "bg-4.png"},
+			{id:"farm", src:this.assetsPath + "backgrounds/farm.png"},
+			{id:"continent", src:this.assetsPath + "backgrounds/continent.png"},
+			{id:"world", src:this.assetsPath + "backgrounds/world.png"},
+			{id:"universe", src:this.assetsPath + "backgrounds/universe.png"},
 			{id:"controlsBg", src:this.assetsPath + "white-bg.png"},
 			{id:"packImg", src:this.assetsPath + "pack.png"},
 			{id:"coin", src:this.assetsPath + "coin.png"},

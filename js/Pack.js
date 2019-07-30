@@ -14,15 +14,14 @@
 		this.image = img;
 		this.regX = this.image.width/2;
 		this.regY = this.image.height;
-		this.scaleX = this.scaleY = .5;
-		this.x = Math.random()*280 - 140 + canvas.width/2;
+		this.x = canvas.width/2 + Math.random()*450 - 225;
 		this.y = -100;
 		this.cursor = "pointer";
 		createjs.Tween.get(this)
-			.to({ y: 200 + Math.random()* (canvas.height - 380 ) }, 500, createjs.Ease.cubicIn)
+			.to({ y: canvas.height/2 +  Math.random()*630 - 250}, 500, createjs.Ease.cubicIn)
 			.call(this.fixZindex)
-			.to({scaleX: .6, scaleY: .4}, 200, createjs.Ease.circOut)
-			.to({scaleX: .5, scaleY: .5}, 150, createjs.Ease.sineOut);
+			.to({scaleX: 1.1, scaleY: .9}, 200, createjs.Ease.circOut)
+			.to({scaleX: 1, scaleY: 1}, 150, createjs.Ease.sineOut);
 
 		this.on("mousedown", this.dispose);
 
@@ -35,8 +34,8 @@
 
 	c.jump = function() {
 		createjs.Tween.get(this)
-			.to({scaleX: .6, scaleY: .4}, 200, createjs.Ease.circOut)
-			.to({scaleX: .5, scaleY: .5}, 150, createjs.Ease.sineIn)
+			.to({scaleX: 1.1, scaleY: .9}, 200, createjs.Ease.circOut)
+			.to({scaleX: 1, scaleY: 1}, 150, createjs.Ease.sineIn)
 			.to({y: this.y-10}, 150, createjs.Ease.circOut)
 			.to({y: this.y}, 150, createjs.Ease.sineInOut);
 	}

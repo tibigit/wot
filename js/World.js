@@ -2,16 +2,17 @@
 
 	window.game = window.game || {};
 
-	var World = function(lvlBG) {
-		this.initialize(lvlBG)
+	var World = function(lvlBG, scaleFactor) {
+		this.initialize(lvlBG, scaleFactor)
 	}
 
 	var w = World.prototype = new createjs.Container();
 	w.Container_initialize = w.initialize;
 
-	w.initialize = function(lvlBG) {
+	w.initialize = function(lvlBG, scaleFactor) {
 		this.Container_initialize();
 		this.lvlBG = lvlBG;
+		this.scaleFactor = scaleFactor;
 		this.regX = canvas.width/2;
 		this.regY = canvas.height/2;
 		this.x = canvas.width/2;
@@ -36,7 +37,7 @@
 		bgrnd.x = canvas.width/2;
 		bgrnd.y = canvas.height/2;
 
-		bgrnd.scale = .53
+		bgrnd.scale = this.scaleFactor;
 
 		this.addChild(bgrnd);
 	}

@@ -21,19 +21,19 @@
 	};
 
 	w.generateWorlds = function() {
-		var w1 = new game.World(game.assets.getAsset("homeBg"));
+		var w1 = new game.World(game.assets.getAsset("farm"), 1);
 		this.worlds.push({'id':1, 'obj':w1});
 		stage.addChild(w1);
 
-		var w2 = new game.World(game.assets.getAsset("lvl2Bg"));		
+		var w2 = new game.World(game.assets.getAsset("continent"), 1);		
 		this.worlds.push({'id':2, 'obj':w2});
 		stage.addChild(w2);
 
-		var w3 = new game.World(game.assets.getAsset("lvl3Bg"));		
+		var w3 = new game.World(game.assets.getAsset("world"), 1);		
 		this.worlds.push({'id':3, 'obj':w3});
 		stage.addChild(w3);
 
-		var w4 = new game.World(game.assets.getAsset("lvl4Bg"));		
+		var w4 = new game.World(game.assets.getAsset("universe"), 1);		
 		this.worlds.push({'id':4, 'obj':w4});
 		stage.addChild(w4);
 	}

@@ -18,7 +18,7 @@
 		var topControlsBg = new createjs.Bitmap(game.assets.getAsset("controlsBg"));
 		topControlsBg.regX = topControlsBg.image.width/2;
 		topControlsBg.regY = topControlsBg.image.height/2;
-		topControlsBg.scaleX = topControlsBg.scaleY = .53
+		// topControlsBg.scaleX = topControlsBg.scaleY = .53
 		topControlsBg.x = canvas.width/2;
 		topControlsBg.y = 20;
 		topControls.addChild(topControlsBg);
@@ -29,7 +29,7 @@
 		footerControlsBg.regX = footerControlsBg.image.width/2;
 		footerControlsBg.regY = footerControlsBg.image.height/2;
 		footerControlsBg.rotation = 180;
-		footerControlsBg.scaleX = footerControlsBg.scaleY = .53
+		// footerControlsBg.scaleX = footerControlsBg.scaleY = .53
 		footerControlsBg.x = canvas.width/2;
 		footerControlsBg.y = stage.canvas.height - 20;
 		footerControls.addChild(footerControlsBg);

@@ -255,8 +255,8 @@ body, html {
 
 #game {
   position: relative;
-  width: 414px;
-  height: 736px;
+  width: 768px;
+  height: 1224px;
   left: 50%;
   top: 50%;
   -webkit-transform: translate(-50%, -50%);
@@ -268,24 +268,24 @@ body, html {
 #canvas {
   width: 100%;
   height: 100%;
-  background-color: #d0db56;
+  background-color: #CDF453;
 }
 
 #world-selector {
   position: absolute;
-  width: 50px;
-  top: 90px;
+  width: 70px;
+  top: 150px;
   right: 5px;
   background-color: white;
-  border-radius: 25px;
+  border-radius: 35px;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent;
 }
 
 #world-selector .lvl {
   position: relative;
-  width: 40px;
-  height: 40px;
+  width: 60px;
+  height: 60px;
   margin: 3px;
   border-radius: 50%;
   background-color: white;

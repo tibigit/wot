@@ -25,10 +25,6 @@
 		var visu = new createjs.Bitmap(img);
 		this.regX = img.width/2;
 		this.regY = img.height;
-
-		if(level == 1) {
-			this.scale = .4;
-		}
 		this.addChild(visu);
 	}
 
