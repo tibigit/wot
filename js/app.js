@@ -10,13 +10,17 @@ var deployer, container, shitContainer;
 var score = 0,
 	totalCPS = 0;
 
+
 var $game = $('#game');
+var scale = Math.min( $(window).innerWidth() / $game.innerWidth(), $(window).innerHeight() / $game.innerHeight() );
+
+	$game.css('height', Math.ceil($(window).height()/scale));
 
 
 function init() {
 
 	canvas = document.getElementById("canvas");
-	
+
 	canvas.width = $game.innerWidth();
 	canvas.height = $game.innerHeight();
 
@@ -46,8 +50,8 @@ function init() {
 }
 
 
-function sizeAll() {
-	var scale = Math.min( $(window).innerWidth() / $game.innerWidth(), $(window).innerHeight() / $game.innerHeight() );
+function sizeAll() {	
+	console.log(scale);
 	$game.css({ transform: "translate(-50%, -50%) " + "scale(" + scale + ")" });
 }
 
