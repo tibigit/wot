@@ -8,7 +8,8 @@ var update = true;
 var deployer, container, shitContainer;
 
 var score = 0,
-	totalCPS = 0;
+	totalCPS = 0,
+	stagePress = false;
 
 
 var $game = $('#game');
@@ -110,6 +111,15 @@ function packDeployer(tgtContainer) {
 	deployer = new game.Deployer(tgtContainer);
 	deployer.x = 10;
 	deployer.y = canvas.height - 20;
+
+	stage.on("stagemousedown", function() {stagePress = true})
+	stage.on("stagemouseup", function() {stagePress = false})
+
+	tgtContainer.on("mouseover", function (evt) {
+		if(stagePress && evt.target.name == "Pack") {
+			evt.target.dispose();
+		}
+	});
 
 	deployer.on("newEvolution", function(e) {
 		game.worlds.getWorld(1).createEvolution(e.obj.x, e.obj.y, e.obj.lvl, e.obj.cps);
