@@ -18,10 +18,12 @@
 		this.regY = canvas.height/2;
 		this.x = canvas.width/2;
 		this.y = canvas.height/2;
+		this.name = lvlBG;
 
 		this.setBG();
 
 		this.evolutionsContainer = new createjs.Container();
+		this.evolutionsContainer.name = 'evolutions';
 		this.addChild(this.evolutionsContainer);
 		
 		this.shitContainer = new createjs.Container();

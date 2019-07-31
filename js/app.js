@@ -1,6 +1,6 @@
 window.game = window.game || {};
 
-var debug = true, logger;
+var debug = false, logger;
 var canvas, stage, assets, preloader;
 
 var update = true;
@@ -28,10 +28,9 @@ function init() {
 	stage = new createjs.Stage(canvas);	
 	createjs.Touch.enable(stage);
 
-
 	// enabled mouse over / out events
-	stage.enableMouseOver(10);
-	// stage.enableDOMEvents(true);
+	// stage.enableMouseOver(10);
+	
 	// keep tracking the mouse even when it leaves the canvas
 	stage.mouseMoveOutside = true; 
 	// a ha !
@@ -117,20 +116,28 @@ function packDeployer(tgtContainer) {
 	deployer.y = canvas.height - 20;
 
 	tgtContainer.parent.on("mousedown", function() {
-		logger.log('mousedown');
+		console.log('mousedown');
 		stagePress = true;
 	})
 	tgtContainer.parent.on("pressup", function() {
-		logger.log('pressup');
+		console.log('pressup');
 		stagePress = false;
 	})
 
-	tgtContainer.on("mouseover", function (evt) {
+	tgtContainer.parent.on("pressmove", function (evt) {
+		var obj = evt.currentTarget.evolutionsContainer.getObjectUnderPoint(evt.stageX, evt.stageY);
+		if(obj && obj.name == "Pack") {
+			console.log('aha');
+			obj.dispose();
+		}
+	});
+
+	/*tgtContainer.on("mouseover", function (evt) {
 		logger.log('mouseover / ' + stagePress + ', ' + evt.target.name);
 		if(stagePress && evt.target.name == "Pack") {
 			evt.target.dispose();
 		}
-	});
+	});*/
 
 	deployer.on("newEvolution", function(e) {
 		game.worlds.getWorld(1).createEvolution(e.obj.x, e.obj.y, e.obj.lvl, e.obj.cps);
