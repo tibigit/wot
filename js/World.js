@@ -2,17 +2,18 @@
 
 	window.game = window.game || {};
 
-	var World = function(lvlBG, scaleFactor) {
-		this.initialize(lvlBG, scaleFactor)
+	var World = function(lvlBG, scaleFactor, bgColor) {
+		this.initialize(lvlBG, scaleFactor, bgColor)
 	}
 
 	var w = World.prototype = new createjs.Container();
 	w.Container_initialize = w.initialize;
 
-	w.initialize = function(lvlBG, scaleFactor) {
+	w.initialize = function(lvlBG, scaleFactor, bgColor) {
 		this.Container_initialize();
 		this.lvlBG = lvlBG;
 		this.scaleFactor = scaleFactor;
+		this.bgColor = bgColor;
 		this.regX = canvas.width/2;
 		this.regY = canvas.height/2;
 		this.x = canvas.width/2;
@@ -29,6 +30,7 @@
 
 
 	w.setBG = function() {
+
 		var bgrnd = new createjs.Bitmap(this.lvlBG);
 		var _w = bgrnd.image.width;
 		var _h = bgrnd.image.height;
@@ -39,6 +41,13 @@
 
 		bgrnd.scale = this.scaleFactor;
 
+
+		var bgC = new createjs.Shape();
+		bgC.graphics.beginFill(this.bgColor);
+		bgC.graphics.drawRect(0, 0, _w, _h);
+		bgC.graphics.endFill();
+
+		this.addChild(bgC);
 		this.addChild(bgrnd);
 	}
 
