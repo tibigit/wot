@@ -16,19 +16,20 @@
 	}
 
 	s.drawScore = function() {
-		var txt = new createjs.Text("Coins: 0", "bold 19px Courier new", "#000");
+		var txt = new createjs.Text("Coins: 0", "bold 36px Courier new", "#000");
 		txt.textBaseline = "middle";
 		txt.textAlign = "center";
+		txt.y = 10;
 		this.addChild(txt);
 
 		this.txt = txt;
 	}
 
 	s.drawCps = function() {
-		var txt = new createjs.Text("0 coins/second", "bold 14px Courier new", "#000");
+		var txt = new createjs.Text("0 coins/second", "bold 30px Courier new", "#000");
 		txt.textBaseline = "middle";
 		txt.textAlign = "center";
-		txt.y = 15;
+		txt.y = 40;
 		this.addChild(txt);
 
 		this.txtCPS = txt;

@@ -1,6 +1,6 @@
 window.game = window.game || {};
 
-
+var debug = true, logger;
 var canvas, stage, assets, preloader;
 
 var update = true;
@@ -89,6 +89,11 @@ function onLoadReady() {
 
 	packDeployer(game.worlds.getWorld(1).evolutionsContainer);
 	initScore();
+	
+	logger = new game.Logger();
+	if(debug) {
+		stage.addChild(logger);
+	}
 
 	createjs.Ticker.addEventListener("tick", tick);
 }
@@ -116,6 +121,7 @@ function packDeployer(tgtContainer) {
 	stage.on("stagemouseup", function() {stagePress = false})
 
 	tgtContainer.on("mouseover", function (evt) {
+		logger.log('mouseover / ' + stagePress + ', ' + evt.target.name);
 		if(stagePress && evt.target.name == "Pack") {
 			evt.target.dispose();
 		}
