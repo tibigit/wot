@@ -33,6 +33,7 @@ function init() {
 
 	// enabled mouse over / out events
 	stage.enableMouseOver(10);
+	stage.enableDOMEvents(true);
 	// keep tracking the mouse even when it leaves the canvas
 	stage.mouseMoveOutside = true; 
 	// a ha !
@@ -117,11 +118,11 @@ function packDeployer(tgtContainer) {
 	deployer.x = 10;
 	deployer.y = canvas.height - 20;
 
-	$(window).on("mousedown", function() {
+	$(canvas).on("mousedown", function() {
 		logger.log('mousedown');
 		stagePress = true;
 	})
-	$(window).on("mouseup", function() {
+	$(canvas).on("mouseup", function() {
 		logger.log('mouseup');
 		stagePress = false;
 	})
