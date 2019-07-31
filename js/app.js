@@ -25,7 +25,7 @@ function init() {
 	canvas.width = $game.innerWidth();
 	canvas.height = $game.innerHeight();
 
-	stage = new createjs.Stage(canvas);
+	stage = new createjs.Stage(canvas);	
 	// canvas.width = window.innerWidth;
 	// canvas.height = window.innerHeight;
 	createjs.Touch.enable(stage);
@@ -33,6 +33,7 @@ function init() {
 
 	// enabled mouse over / out events
 	stage.enableMouseOver(10);
+	stage.enableDOMEvents(true);
 	// keep tracking the mouse even when it leaves the canvas
 	stage.mouseMoveOutside = true; 
 	// a ha !
