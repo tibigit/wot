@@ -118,9 +118,11 @@ function packDeployer(tgtContainer) {
 	deployer.y = canvas.height - 20;
 
 	$(canvas).on("mousedown", function() {
+		logger.log('mousedown');
 		stagePress = true;
 	})
 	$(canvas).on("mouseup", function() {
+		logger.log('mouseup');
 		stagePress = false;
 	})
 
