@@ -21,10 +21,21 @@
 	}
 
 	e.drawEvolution = function(level) {
-		var img = game.assets.getAsset("evolution"+level);
-		var visu = new createjs.Bitmap(img);
-		this.regX = img.width/2;
-		this.regY = img.height;
+		var ev = game.assets.getAsset("evolutions");
+
+		var visu = new createjs.Sprite(ev, "item-"+level);
+		var bounds = visu.getBounds();
+
+		this.regX = bounds.width/2;
+		this.regY = bounds.height;
+
+		var dragArea = new createjs.Shape();
+		dragArea.graphics.beginFill('#ffffff');
+		dragArea.graphics.drawRect(-5, -10, bounds.width + 10, bounds.height + 20);
+		dragArea.graphics.endFill();
+		dragArea.alpha = 0.01;
+		this.addChild(dragArea);
+
 		this.addChild(visu);
 	}
 
@@ -39,6 +50,7 @@
 		this.on("pressmove", function (evt) {
 			this.x = evt.stageX + this.offset.x;
 			this.y = evt.stageY + this.offset.y;
+			this.scaleX = -1;
 		});
 
 		this.on("pressup", function(evt) {
@@ -60,6 +72,10 @@
 	}
 
 	e.updateScore = function() {
+		createjs.Tween.get(this)
+			.to({scaleX: 1.1, scaleY: .9}, 100, createjs.Ease.circOut)
+			.to({scaleX: 1, scaleY: 1}, 150, createjs.Ease.sineOut)
+
 		var ec = new game.EvolutionCoins(this.cps*2, this.x, this.y);
 		var that = this;
 		ec.on("complete", function() {

@@ -19,13 +19,21 @@
 
 	e.drawEvolutionCoins = function(coins) {
 		var txt = new createjs.Text("+"+coins, "bold 19px Courier new", "#fff");
+		var poop = new createjs.Sprite(game.assets.getAsset("assets"), "poop-a");
+
 		txt.textBaseline = "middle";
 		txt.textAlign = "center";
+
+		this.addChild(poop);
+
 		this.addChild(txt);
 
-		createjs.Tween.get(this)
-			.to({ y: this.y - 40 }, 500, createjs.linear)
-			.to({ y: this.y - 70, alpha: 0 }, 700, createjs.Ease.sineOut)
+		createjs.Tween.get(poop).wait(200)
+			.to({alpha: 0 }, 700, createjs.Ease.sineOut)
+
+		createjs.Tween.get(txt)
+			.to({ y: - 40 }, 500, createjs.linear)
+			.to({ y: - 70, alpha: 0 }, 700, createjs.Ease.sineOut)
 			.call(this.handleComplete);
 	}
 

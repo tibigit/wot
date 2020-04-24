@@ -12,7 +12,7 @@
 	d.bar;
 	d.busy = false;
 	d.MAX_ON_STAGE = 16;
-	d.DEPLOY_INTERVAL = 2000;
+	d.DEPLOY_INTERVAL = 500;
 	d.Container_initialize = d.initialize;
 
 	d.initialize = function(tgt) {
@@ -37,7 +37,8 @@
 	d.checkPacks = function() {
 		if(this.tgt.numChildren < this.MAX_ON_STAGE && !this.busy) {
         	var _this = this;
-        	var pack = new game.Pack(game.assets.getAsset("packImg"));
+
+        	var pack = new game.Pack(game.assets.getAsset("assets"));
 			pack.on("destroyed", function() {
 				var event = new createjs.Event("newEvolution");
 				event.obj = {x:pack.x, y:pack.y, lvl:1, cps:0.5};

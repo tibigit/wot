@@ -18,8 +18,12 @@ function numberFormatters (value) {
 function Beautify(value, floats) {
 	var negative=(value<0);
 	var decimal='';
-	if (value<1000000 && floats>0) decimal='.'+(value.toFixed(floats).toString()).split('.')[1];
+	if (value<1000000 && floats>0) 
+		decimal='.'+(value.toFixed(floats).toString()).split('.')[1];
+
 	value=Math.floor(Math.abs(value));
+
 	var output=numberFormatters(value).toString().replace(/\B(?=(\d{3})+(?!\d))/g,',');
+	
 	return negative?'-'+output:output+decimal;
 }

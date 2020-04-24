@@ -3,7 +3,6 @@
 	window.game = window.game || {}
 
 	var AssetManager = function() {
-		this.caca = "sheeit";
 		this.initialize();
 	}
 
@@ -23,31 +22,15 @@
 	a.initialize = function () {
         this.Container_initialize();
         this.loadManifest = [
+        	{id:"evolutions", src:this.assetsPath + "evolutions.json", "type":"spritesheet"},
+        	{id:"assets", src:this.assetsPath + "assets.json", "type":"spritesheet"},
+
 			{id:"farm", src:this.assetsPath + "backgrounds/farm.png"},
 			{id:"continent", src:this.assetsPath + "backgrounds/continent.png"},
 			{id:"world", src:this.assetsPath + "backgrounds/world.png"},
 			{id:"universe", src:this.assetsPath + "backgrounds/universe.png"},
-			{id:"controlsBg", src:this.assetsPath + "white-bg.png"},
-			{id:"packImg", src:this.assetsPath + "pack.png"},
-			{id:"coin", src:this.assetsPath + "coin.png"},
-			{id:"evolution1", src:this.assetsPath + "item-1.png"},
-			{id:"evolution2", src:this.assetsPath + "item-2.png"},
-			{id:"evolution3", src:this.assetsPath + "item-3.png"},
-			{id:"evolution4", src:this.assetsPath + "item-4.png"},
-			{id:"evolution5", src:this.assetsPath + "item-5.png"},
-			{id:"evolution6", src:this.assetsPath + "item-6.png"},
-			{id:"evolution7", src:this.assetsPath + "item-7.png"},
-			{id:"evolution8", src:this.assetsPath + "item-8.png"},
-			{id:"evolution9", src:this.assetsPath + "item-9.png"},
-			{id:"evolution10", src:this.assetsPath + "item-10.png"},
-			{id:"evolution11", src:this.assetsPath + "item-11.png"},
-			{id:"evolution12", src:this.assetsPath + "item-12.png"},
-			{id:"evolution13", src:this.assetsPath + "item-13.png"},
-			{id:"evolution14", src:this.assetsPath + "item-14.png"},
-			{id:"evolution15", src:this.assetsPath + "item-15.png"},
-			{id:"evolution16", src:this.assetsPath + "item-16.png"},
-			{id:"evolution17", src:this.assetsPath + "item-17.png"},
-			{id:"evolution18", src:this.assetsPath + "item-18.png"}
+
+			{id:"controlsBg", src:this.assetsPath + "white-bg.png"}
 		];
 	}
 

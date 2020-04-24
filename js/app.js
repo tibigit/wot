@@ -7,8 +7,8 @@ var update = true;
 
 var deployer, container, shitContainer;
 
-var score = 0,
-	totalCPS = 0,
+var score = 1231231999,
+	totalCPS = 123465,
 	stagePress = false;
 
 
@@ -50,7 +50,7 @@ function init() {
 
 
 function sizeAll() {	
-	console.log(scale);
+	// console.log(scale);
 	$game.css({ transform: "translate(-50%, -50%) " + "scale(" + scale + ")" });
 }
 
@@ -97,8 +97,6 @@ function onLoadReady() {
 }
 
 
-
-
 var s;
 function initScore() {
 	s = new game.Score();
@@ -116,28 +114,19 @@ function packDeployer(tgtContainer) {
 	deployer.y = canvas.height - 20;
 
 	tgtContainer.parent.on("mousedown", function() {
-		console.log('mousedown');
 		stagePress = true;
 	})
 	tgtContainer.parent.on("pressup", function() {
-		console.log('pressup');
 		stagePress = false;
 	})
 
 	tgtContainer.parent.on("pressmove", function (evt) {
 		var obj = evt.currentTarget.evolutionsContainer.getObjectUnderPoint(evt.stageX, evt.stageY);
 		if(obj && obj.name == "Pack") {
-			console.log('aha');
-			obj.dispose();
+			obj.parent.dispose();
 		}
 	});
 
-	/*tgtContainer.on("mouseover", function (evt) {
-		logger.log('mouseover / ' + stagePress + ', ' + evt.target.name);
-		if(stagePress && evt.target.name == "Pack") {
-			evt.target.dispose();
-		}
-	});*/
 
 	deployer.on("newEvolution", function(e) {
 		game.worlds.getWorld(1).createEvolution(e.obj.x, e.obj.y, e.obj.lvl, e.obj.cps);

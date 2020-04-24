@@ -24,7 +24,7 @@
     <preference name="orientation" value="portrait" />
 
     <preference name="SplashScreen" value="img/SplashScreen.png"/>
-    <preference name="SplashScreenDelay" value="2000"/>
+    <preference name="SplashScreenDelay" value="5000"/>
 
     <access origin="*"></access>
 

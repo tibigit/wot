@@ -69,9 +69,9 @@
 			}
 			distances.sort(function(obj1, obj2) {return obj1.dist - obj2.dist});
 
-			if(distances.length > 0 && distances[0].dist < 50) {
+			if(distances.length > 0 && distances[0].dist < 120) {
 				if(this.level+1 >= 7) {
-					console.log('you have reached the maximum level');
+					console.log('you have reached the GOD MODE !!!');
 					return;
 				}
 
